@@ -1,4 +1,5 @@
 import cv2
+from config import *
 import numpy as np
 import imutils
 import random
@@ -11,18 +12,6 @@ cam = cv2.VideoCapture(0)
 mp_face_mesh = mp.solutions.face_mesh
 face_mesh = mp_face_mesh.FaceMesh(min_detection_confidence=0.5, min_tracking_confidence=0.5)
 face_mesh_eye = mp_face_mesh.FaceMesh(max_num_faces=1, refine_landmarks=True, min_detection_confidence=0.5, min_tracking_confidence=0.5)
-
-# parameters
-COUNTER, TOTAL = 0,0
-counter_ok_questions = 0
-counter_ok_consecutives = 0
-limit_consecutives = 1
-limit_questions = 5
-counter_try = 0
-limit_try = 50
-CEF_COUNTER = 0
-CLOSED_EYES_FRAME = 3
-counter_time_gap = 50
 
 # Left eyes indices
 LEFT_EYE = [362, 382, 381, 380, 374, 373, 390, 249, 263, 466, 388, 387, 386, 385, 384, 398]
